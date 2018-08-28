@@ -6,37 +6,51 @@
 
 
 //Array of words to be selected
-var wordList = ['computer', 'hard drive', 'mouse', 'keyboard', 'screen', 'memory', 'printer', 'algorithim', 'javascript', 'python', 'array', 'loop', 'variable'];
+var wordList = ['computer', 'harddrive', 'mouse', 'keyboard', 'screen', 'memory', 'printer', 'algorithim', 'javascript', 'python', 'array', 'loop', 'variable'];
+var remainingGuess = 10;
 var dashArray = [];
 var showLetter = [];
+var wrongLetter = [];
+
 
 //creates a random word from the wordList array
 var randomWord = wordList[Math.floor(Math.random() * wordList.length)];
 
-//i need a for loop to go through the randomWord and break it apart
-// for ( let i = 0; i < randomWord.length; i++ ){
-//     letterArray.push(randomWord[i]);
-// }
 
 //this loop pushed a dash for each index of letterArray
-for(let j = 0; j < randomWord.length; j++ ){
-    dashArray.push(" _ ")  
+for(let i = 0; i < randomWord.length; i++ ){
+    dashArray.push(" _ ");
 }
+//capture the letter the user has guessed
+document.onkeyup = (event) =>{
+    var userGuess = event.key;
+    console.log(randomWord.indexOf(userGuess));
 
-//read the letter chosen by the player and compare it to letterArray
-document.onkeyup = function(event){
-    var chosenLetter = event.key;
-    console.log(randomWord.indexOf(chosenLetter));
-    //this "if" checks of the chosenLetter exist in an index position of randomWord
-    //if it is not then it will console -1 because that is how JS shows something is not in an array
-    if(randomWord.indexOf(chosenLetter) > -1){
-        showLetter.push(chosenLetter);
+    if(randomWord.indexOf(userGuess) > -1){
+        showLetter.push(userGuess);
+        remainingGuess--;
+        dashArray[randomWord.indexOf(userGuess)] = userGuess;
+    }else{
+        wrongLetter.push(userGuess);
+        remainingGuess--;
+    }
+
+    if(dashArray.join('') === randomWord){
+        alert('you win');
     }
     console.log(showLetter);
+    console.log(wrongLetter);
+    console.log(remainingGuess);
+    console.log(dashArray);
 }
 
 
 
-//document.getElementById('test').innerHTML = showLetter;
+
+
+
+
+
+
 console.log(randomWord);
 console.log(dashArray);
