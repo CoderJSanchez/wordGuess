@@ -26,21 +26,20 @@ console.log(dashArray);
 //capture the letter the user has guessed
 document.onkeyup = (event) =>{
     var userGuess = event.key;
-    //console.log(randomWord.indexOf(userGuess));
-
+    //this 'if' checks if the letter exists in the randomWord selected by the computer
     if(randomWord.indexOf(userGuess) > -1){
+        //this pushes the correct letter guess to the showLetter array
         showLetter.push(userGuess);
+        console.log(`${showLetter} is in the word`);
+        //this counts down the chances left
         remainingGuess--;
-        dashArray[randomWord.indexOf(userGuess)] = userGuess;
     }else{
         wrongLetter.push(userGuess);
-        remainingGuess--;
         console.log(`${wrongLetter} is not in the word`);
+        remainingGuess--;
     }
 
-    if(dashArray.join('') === randomWord){
-        alert('you win');
-    }
-    console.log(`You have ${remainingGuess} guesses left`);
-    console.log(dashArray + 'dashArry in doc');
+    console.log(`You have ${remainingGuess} more guesses`);
+
 }
+
