@@ -8,8 +8,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-    <link rel = "stylesheet" href = "assets/css/style.css">
-    <script src = 'assets/javascript/game.js'></script> 
+    <!--<link rel = "stylesheet" href = "assets/css/style.css">-->
     <!-- <script>
         function hideText() {
             document.getElementById("gameStartText").style.display = "none";
@@ -21,13 +20,27 @@
           <div id = 'jumboTest' class="jumbotron">
               <h1 class = 'text-center' >Hangman | Computer Theme</h1>
           </div>
+          <div class = 'row'>
+              <div class = 'col-4'>
+                  <h3>Wrong Letters: <span id = 'wrongLetterSpan'></span></h3>
+              </div>
+              <div class = 'col-4'>
+                <h3>Word: <span id = 'answerSpan'></span></h3>
+              </div>
+                <div class = 'col-4'>
+                     <h3>Gusses Left: <span id = 'guessesLeftSpan'></span></h3>
+                </div>
+          </div>
           <div id = 'gameStartBox' class = 'mx-auto d-block rotateOutDownLeft'>
-            <p id = 'gameStartText' onclick = 'hideText()'>PRESS ANY KEY TO START GAME</p>          
+
+            <!-- <p id = 'gameStartText' onclick = 'hideText()'>PRESS ANY KEY TO START GAME</p>           -->
           </div>
           <p><span id = 'showDashes'></span></p>
       </div> <!--/container-->
       
     <!-- Optional JavaScript -->
+    <script src = 'assets/javascript/game.js'></script> 
+
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
