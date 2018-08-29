@@ -15,7 +15,7 @@ var wrongLetter = [];
 
 //creates a random word from the wordList array
 var randomWord = wordList[Math.floor(Math.random() * wordList.length)];
-console.log(randomWord);   
+console.log(randomWord + 'this is conosled from randomWord in line 18');   
 
 for(let i = 0; i < randomWord.length; i++){
    dashArray[i] = ' _ ';
@@ -25,20 +25,20 @@ document.getElementById("answerSpan").innerHTML = dashArray;
 //record the letter by user
 document.onkeyup = (event) => {
     var playerGuess = event.key;
+    remainingGuess--;
+    console.log(remainingGuess);
     for(let i = 0; i < randomWord.length; i++){
         if(randomWord[i] === playerGuess){
-            dashArray[i] = playerGuess;
-            remainingGuess--;
-            document.getElementById("answerSpan").innerHTML = dashArray;
+            dashArray[i] = playerGuess;    
         }else{
             if(randomWord[i]!==playerGuess){
-                wrongLetter.push(playerGuess);
-                remainingGuess--;
-            }
-            
+                wrongLetter.push(playerGuess);        
+            }          
         }
      }
-     console.log(wrongLetter);
+     console.log(`This is dashArray outside the for loop: ${dashArray}`);
+     document.getElementById("answerSpan").innerHTML = dashArray;
+     
     if(playerGuess !== randomWord){
         wrongLetter.push(playerGuess);
     }
