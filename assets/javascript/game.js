@@ -1,10 +1,4 @@
 
-// document.addEventListener('keydown', function(){
-//     document.getElementById("gameStartText").style.display = 'none';
-// })
-
-
-
 //Array of words to be selected
 var wordList = ['computer', 'harddrive', 'mouse', 'keyboard', 'screen', 'memory', 'printer', 'javascript', 'python', 'array', 'loop', 'variable'];
 var remainingGuess = 10;
@@ -94,6 +88,10 @@ document.onkeyup = (event) => {
 
     if(remainingGuess <= 2){
         document.getElementById('answerSpan').style.color = 'red';
+    }
+
+    if(remainingGuess == 3){
+        $("#launchModal").modal();
     }
 
 }   //<-- closing brace for onkeyup event
