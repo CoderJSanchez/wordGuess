@@ -8,7 +8,8 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-    <!--<link rel = "stylesheet" href = "assets/css/style.css">-->
+    <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
+    <link rel = "stylesheet" href = "assets/css/style.css">
     <!-- <script>
         function hideText() {
             document.getElementById("gameStartText").style.display = "none";
@@ -16,24 +17,35 @@
         </script> -->
   </head>
   <body>
-      <div class="container mt-4">
-          <div id = 'jumboTest' class="jumbotron">
+      <div class="container mt-2">
+          <div id = 'jumboTest' class="jumbotron bg-info text-white">
               <h1 class = 'text-center' >Hangman | Computer Theme</h1>
-          </div>
+          </div> 
           <div class = 'row'>
               <div class = 'col-4'>
-                  <h3>Wrong Letters: <span id = 'wrongLetterSpan'></span></h3>
-              </div>
-              <div class = 'col-4'>
-                <h3>Word: <span id = 'answerSpan'></span></h3>
-              </div>
-                <div class = 'col-4'>
-                     <h3>Guesses Left: <span id = 'guessesLeftSpan'></span></h3>
-                </div>
+                  <h3 id = 'mainWrongWord'>Wrong Letters: <span id = 'wrongLetterSpan'></span></h3>
+              </div>        
+          </div>
+          <div class = 'row'>
+            <div class = 'col-12'>
+                <h3 id = 'mainWord'>Word: <span id = 'answerSpan'></span></h3>
+            </div>             
+          </div>
+          <div class = 'row'>
+            <div class = 'col-4'>
+                <h3 id = 'mainWordsLeft'>Guesses Left: <span id = 'guessesLeftSpan'></span></h3>
+            </div>
+          </div>
+          <div class = 'row'>
+            <div class = 'col-12'>
+                <h4 id = 'mainWinsCounter'>WINS: <span id = 'winsCounterSpan'></span></h4>
+            </div>
+
           </div>
           <div id = 'gameStartBox' class = 'mx-auto d-block rotateOutDownLeft'>
 
-            <!-- <p id = 'gameStartText' onclick = 'hideText()'>PRESS ANY KEY TO START GAME</p>           -->
+            <!-- <p id = 'gameStartText' onclick = 'hideText()'>PRESS ANY KEY TO START GAME</p> -->
+                     
           </div>
           <p><span id = 'showDashes'></span></p>
       </div> <!--/container-->
