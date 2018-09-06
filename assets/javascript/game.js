@@ -1,6 +1,7 @@
 
 //Array of words to be selected
-var wordList = ['computer', 'harddrive', 'mouse', 'keyboard', 'screen', 'memory', 'printer', 'javascript', 'python', 'array', 'loop', 'variable'];
+
+var wordList = ['computer', 'mouse', 'windows', 'keyboard', 'disk', 'printer', 'monitor', 'macbook', 'variable', 'internet', 'browser', 'Apple'];
 var remainingGuess = 10;
 var wins = 0;
 var dashArray = [];
@@ -98,6 +99,11 @@ document.onkeyup = (event) => {
 
 
 document.getElementById("guessesLeftSpan").innerHTML = remainingGuess;
+
+//Contribution made by Audrey, Doug and Joe on 9-1-2018
+
+
+
 
 
 
